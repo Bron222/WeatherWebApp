@@ -45,18 +45,20 @@ React SPA  ──HTTP/JSON──▶  Spring Boot API  ──▶  Open-Meteo API
 
 ## Phases
 
-### Phase 0 — Setup (in progress)
+### Phase 0 — Setup (done)
 - [x] Verify toolchain (JDK, Node, Maven, Docker, git, gh)
 - [x] `git init`, local ignore rules, README, this roadmap
-- [ ] First commit + create public GitHub repo `WeatherWebApp` + push
+- [x] First commit + create public GitHub repo `WeatherWebApp` + push
 
 ### Phase 1 — Backend weather proxy (no database)
-- [ ] Generate Spring Boot project (Web, Validation, Actuator, springdoc)
+- [x] Generate Spring Boot project — Spring Boot 4.1.1, Java 25, Maven;
+      dependencies: Web (MVC), Validation, Actuator, DevTools
+- [ ] Add springdoc-openapi to `pom.xml` by hand
 - [ ] Open-Meteo client (RestClient) + config
 - [ ] `GET /api/geocode` and `GET /api/weather` with DTOs
 - [ ] Controller / service layering, `@RestControllerAdvice` error handling
 - [ ] Unit tests (Mockito) + web-layer tests (MockMvc)
-- [ ] Swagger UI available at `/swagger-ui.html`
+- [ ] Swagger UI available at `/swagger-ui/index.html`
 
 ### Phase 2 — Frontend
 - [ ] Generate Vite React app

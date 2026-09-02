@@ -8,7 +8,7 @@ containers, CI, and Git/GitHub workflow.
 
 | Layer      | Technology                                            |
 | ---------- | ----------------------------------------------------- |
-| Backend    | Java 25 (LTS), Spring Boot 3.5, Maven                 |
+| Backend    | Java 25 (LTS), Spring Boot 4.1, Maven                 |
 | Database   | PostgreSQL, Spring Data JPA, Flyway migrations        |
 | Frontend   | React 18, Vite, JavaScript                            |
 | Weather    | [Open-Meteo](https://open-meteo.com/) (free, no key)  |
@@ -27,8 +27,18 @@ WeatherWebApp/
 
 ## Status
 
-Phase 0 — project setup. See [ROADMAP.md](ROADMAP.md) for the full plan.
+Phase 1 — backend weather proxy. See [ROADMAP.md](ROADMAP.md) for the full plan.
 
 ## Getting started
 
-Instructions will be added as each part of the stack comes online.
+### Backend
+
+Requires JDK 25 (Eclipse Temurin recommended). From `backend/`:
+
+```bash
+./mvnw spring-boot:run
+```
+
+The API starts on http://localhost:8080.
+Health check: http://localhost:8080/actuator/health
+
