@@ -58,13 +58,20 @@ React SPA  ──HTTP/JSON──▶  Spring Boot API  ──▶  Open-Meteo API
 - [ ] Add springdoc-openapi to `pom.xml` by hand
 - [x] Geocode DTOs — outbound (`GeocodeResult`, `GeocodeResponse`) and inbound
       (`OpenMeteoPlace`, `OpenMeteoGeocodingResponse`)
-- [x] Typed config (`OpenMeteoProperties` via `@ConfigurationProperties`) and
+- [x] Typed config (`OpenMeteoProperties` via `@ConfigurationProperties`, now
+      in a shared `com.weatherwebapp.config` package) and
       `OpenMeteoGeocodingClient` (`RestClient` call to Open-Meteo geocoding)
 - [x] `GeocodeService` (map Open-Meteo results → `GeocodeResult`) and
       `GeocodeController` exposing `GET /api/geocode` — verified working
       end-to-end (multiple results, empty results, and missing-param cases)
-- [ ] Weather DTOs, client, service, controller for `GET /api/weather`
-- [ ] `@RestControllerAdvice` error handling
+- [x] Weather DTOs, client, service, controller for `GET /api/weather` —
+      `WeatherService` zips Open-Meteo's parallel `daily` arrays into a
+      `List<DailyForecast>`; verified working end-to-end (current conditions
+      + 7-day forecast, and a real transient upstream timeout correctly
+      surfaced as a clean `502`)
+- [x] `@RestControllerAdvice` error handling — clean JSON error shape
+      (400 bad request, 502 upstream failure, 500 fallback); verified the
+      missing-`q` case no longer leaks a stack trace
 - [ ] Unit tests (Mockito) + web-layer tests (MockMvc)
 - [ ] Swagger UI available at `/swagger-ui/index.html`
 

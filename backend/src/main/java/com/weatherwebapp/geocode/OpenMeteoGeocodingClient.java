@@ -1,5 +1,7 @@
 package com.weatherwebapp.geocode;
 
+import com.weatherwebapp.config.OpenMeteoProperties;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
