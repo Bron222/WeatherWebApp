@@ -27,7 +27,9 @@ WeatherWebApp/
 
 ## Status
 
-Phase 1 — backend weather proxy. See [ROADMAP.md](ROADMAP.md) for the full plan.
+Phase 1 complete — backend weather proxy (`/api/geocode`, `/api/weather`),
+tested, documented. Starting Phase 2 (frontend) next. See
+[ROADMAP.md](ROADMAP.md) for the full plan.
 
 ## Getting started
 
@@ -40,5 +42,7 @@ Requires JDK 25 (Eclipse Temurin recommended). From `backend/`:
 ```
 
 The API starts on http://localhost:8080.
-Health check: http://localhost:8080/actuator/health
+
+- Health check: http://localhost:8080/actuator/health
+- Interactive API docs (Swagger UI): http://localhost:8080/swagger-ui/index.html
 

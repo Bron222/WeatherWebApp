@@ -50,12 +50,12 @@ React SPA  ──HTTP/JSON──▶  Spring Boot API  ──▶  Open-Meteo API
 - [x] `git init`, local ignore rules, README, this roadmap
 - [x] First commit + create public GitHub repo `WeatherWebApp` + push
 
-### Phase 1 — Backend weather proxy (no database)
+### Phase 1 — Backend weather proxy (no database) (done)
 - [x] Generate Spring Boot project — Spring Boot 4.1.1, Java 25, Maven;
       dependencies: Web (MVC), Validation, Actuator, DevTools
 - [x] Rename base package to `com.weatherwebapp` (project-name-based, no
       personal identifiers, instead of `io.github.bron222`)
-- [ ] Add springdoc-openapi to `pom.xml` by hand
+- [x] Add springdoc-openapi to `pom.xml` by hand — `springdoc-openapi-starter-webmvc-ui:3.1.1` (their Boot 4/Framework 7-compatible major version; note their Maven Central search index is stale, `maven-metadata.xml` was the reliable source of truth)
 - [x] Geocode DTOs — outbound (`GeocodeResult`, `GeocodeResponse`) and inbound
       (`OpenMeteoPlace`, `OpenMeteoGeocodingResponse`)
 - [x] Typed config (`OpenMeteoProperties` via `@ConfigurationProperties`, now
@@ -72,8 +72,13 @@ React SPA  ──HTTP/JSON──▶  Spring Boot API  ──▶  Open-Meteo API
 - [x] `@RestControllerAdvice` error handling — clean JSON error shape
       (400 bad request, 502 upstream failure, 500 fallback); verified the
       missing-`q` case no longer leaks a stack trace
-- [ ] Unit tests (Mockito) + web-layer tests (MockMvc)
-- [ ] Swagger UI available at `/swagger-ui/index.html`
+- [x] Unit tests (Mockito) + web-layer tests (MockMvc) — 9 tests total:
+      `GeocodeServiceTest`/`WeatherServiceTest` (mapping logic, mocked
+      clients) and `GeocodeControllerTest`/`WeatherControllerTest`
+      (`@WebMvcTest` + `MockMvc`: happy path, missing params → 400,
+      upstream failure → 502)
+- [x] Swagger UI available at `/swagger-ui/index.html` — both endpoints
+      listed with correct parameter types, "Try it out" verified working
 
 ### Phase 2 — Frontend
 - [ ] Generate Vite React app
