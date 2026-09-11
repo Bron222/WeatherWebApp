@@ -60,8 +60,9 @@ React SPA  ──HTTP/JSON──▶  Spring Boot API  ──▶  Open-Meteo API
       (`OpenMeteoPlace`, `OpenMeteoGeocodingResponse`)
 - [x] Typed config (`OpenMeteoProperties` via `@ConfigurationProperties`) and
       `OpenMeteoGeocodingClient` (`RestClient` call to Open-Meteo geocoding)
-- [ ] `GeocodeService` (map Open-Meteo results → `GeocodeResult`) and
-      `GeocodeController` exposing `GET /api/geocode`
+- [x] `GeocodeService` (map Open-Meteo results → `GeocodeResult`) and
+      `GeocodeController` exposing `GET /api/geocode` — verified working
+      end-to-end (multiple results, empty results, and missing-param cases)
 - [ ] Weather DTOs, client, service, controller for `GET /api/weather`
 - [ ] `@RestControllerAdvice` error handling
 - [ ] Unit tests (Mockito) + web-layer tests (MockMvc)
