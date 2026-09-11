@@ -1,4 +1,4 @@
-package io.github.bron222.weather;
+package com.weatherwebapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

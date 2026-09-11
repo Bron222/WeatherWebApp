@@ -1,4 +1,4 @@
-package io.github.bron222.weather;
+package com.weatherwebapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
