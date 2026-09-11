@@ -53,10 +53,17 @@ React SPA  ──HTTP/JSON──▶  Spring Boot API  ──▶  Open-Meteo API
 ### Phase 1 — Backend weather proxy (no database)
 - [x] Generate Spring Boot project — Spring Boot 4.1.1, Java 25, Maven;
       dependencies: Web (MVC), Validation, Actuator, DevTools
+- [x] Rename base package to `com.weatherwebapp` (project-name-based, no
+      personal identifiers, instead of `io.github.bron222`)
 - [ ] Add springdoc-openapi to `pom.xml` by hand
-- [ ] Open-Meteo client (RestClient) + config
-- [ ] `GET /api/geocode` and `GET /api/weather` with DTOs
-- [ ] Controller / service layering, `@RestControllerAdvice` error handling
+- [x] Geocode DTOs — outbound (`GeocodeResult`, `GeocodeResponse`) and inbound
+      (`OpenMeteoPlace`, `OpenMeteoGeocodingResponse`)
+- [x] Typed config (`OpenMeteoProperties` via `@ConfigurationProperties`) and
+      `OpenMeteoGeocodingClient` (`RestClient` call to Open-Meteo geocoding)
+- [ ] `GeocodeService` (map Open-Meteo results → `GeocodeResult`) and
+      `GeocodeController` exposing `GET /api/geocode`
+- [ ] Weather DTOs, client, service, controller for `GET /api/weather`
+- [ ] `@RestControllerAdvice` error handling
 - [ ] Unit tests (Mockito) + web-layer tests (MockMvc)
 - [ ] Swagger UI available at `/swagger-ui/index.html`
 
