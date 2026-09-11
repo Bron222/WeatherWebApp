@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: weather
+
+weather:
+  open-meteo:
+    geocoding-url: https://geocoding-api.open-meteo.com/v1/search
+    forecast-url: https://api.open-meteo.com/v1/forecast
