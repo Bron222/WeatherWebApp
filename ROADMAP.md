@@ -81,7 +81,7 @@ React SPA  ──HTTP/JSON──▶  Spring Boot API  ──▶  Open-Meteo API
       listed with correct parameter types, "Try it out" verified working
 
 ### Phase 2 — Frontend
-- [ ] Generate Vite React app
+- [x] Generate Vite React app
 - [ ] Search box → geocode results → current conditions + multi-day forecast
 - [ ] Components, custom hooks, TanStack Query for data fetching
 - [ ] Backend CORS config; loading and error states
